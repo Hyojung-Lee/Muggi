@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.hyojung.muggi.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="700dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/selectegg"
+            tools:layout_editor_absoluteX="105dp"
+            tools:layout_editor_absoluteY="137dp" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tool"
+            android:id="@+id/eggs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="100dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <ImageView
+                android:id="@+id/first"
+                android:layout_width="60dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/egg1" />
+
+            <ImageView
+                android:id="@+id/second"
+                android:layout_width="60dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/egg2" />
+
+            <ImageView
+                android:id="@+id/third"
+                android:layout_width="60dp"
+                android:layout_height="100dp"
+                android:src="@drawable/egg3" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

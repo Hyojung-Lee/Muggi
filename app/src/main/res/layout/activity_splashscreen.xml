@@ -14,9 +14,9 @@
     <ImageView
         android:id="@+id/splash"
         android:layout_width="158dp"
-        android:layout_height="70dp"
+        android:layout_height="90dp"
         android:adjustViewBounds="false"
-        android:background="@drawable/muggi"
+        android:background="@drawable/muggy"
         android:cropToPadding="false"
         android:scaleType="fitXY" />
 

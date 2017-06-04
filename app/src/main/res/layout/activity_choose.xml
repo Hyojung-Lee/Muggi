@@ -14,28 +14,23 @@
         <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+            android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:src="@drawable/bg2"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="395dp"
-        android:layout_height="700dp"
-        android:orientation="vertical"
-        android:weightSum="1"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp">
-
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/selectEgg"
             android:layout_width="200dp"
             android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="90dp"
             android:layout_marginBottom="60dp"
-            android:src="@drawable/selectegg"
-            tools:layout_editor_absoluteX="105dp"
-            tools:layout_editor_absoluteY="137dp" />
+            android:src="@drawable/selectegg" />
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -48,10 +43,11 @@
             android:orientation="horizontal"
             android:paddingBottom="16dp"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="0dp">
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_below="@id/selectEgg">
 
             <ImageButton
-                android:id="@+id/first"
+                android:id="@+id/spikeySelect"
                 android:layout_width="100dp"
                 android:layout_height="130dp"
                 android:background="#00ff0000"
@@ -60,7 +56,7 @@
                 android:src="@drawable/egg_btn" />
 
             <ImageButton
-                android:id="@+id/second"
+                android:id="@+id/baldySelect"
                 android:layout_width="100dp"
                 android:layout_height="130dp"
                 android:background="#00ff0000"
@@ -69,12 +65,12 @@
                 android:src="@drawable/egg_btn" />
 
             <ImageButton
-                android:id="@+id/third"
+                android:id="@+id/buggySelect"
                 android:layout_width="100dp"
                 android:layout_height="130dp"
                 android:background="#00ff0000"
                 android:scaleType="fitXY"
                 android:src="@drawable/egg_btn" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

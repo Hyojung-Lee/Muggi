@@ -3,8 +3,9 @@
     package="com.example.hyojung.muggi">
 
     <application
+        android:largeHeap="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -28,6 +29,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>>
+
+        <activity android:name=".SpikeySelected">
+        </activity>>
+        <activity android:name=".BaldySelected">
+        </activity>>
+        <activity android:name=".BuggySelected">
+        </activity>>
+
     </application>
 
 </manifest>

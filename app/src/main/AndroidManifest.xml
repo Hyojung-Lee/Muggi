@@ -30,6 +30,9 @@
             </intent-filter>
         </activity>>
 
+        <activity android:name=".EggSelected">
+        </activity>>
+
         <activity android:name=".SpikeySelected">
         </activity>>
         <activity android:name=".BaldySelected">

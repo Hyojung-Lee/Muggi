@@ -21,11 +21,12 @@ public class ChooseActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+        Animation set_Anim = AnimationUtils.loadAnimation(this, R.anim.set);
         Animation transAnim = AnimationUtils.loadAnimation(this, R.anim.translate);
         Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
-        ImageView image=(ImageView) findViewById(R.id.selectEgg);
-        image.startAnimation(alphaAnim);
+        ImageView image=(ImageView) findViewById(R.id.text);
+        image.startAnimation(set_Anim);
 
         ImageButton spikey = (ImageButton)findViewById(R.id.spikeySelect);
 

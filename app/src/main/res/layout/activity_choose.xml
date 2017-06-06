@@ -37,11 +37,10 @@
             xmlns:tools="http://schemas.android.com/tool"
             android:id="@+id/eggs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingBottom="16dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="0dp"
             android:layout_below="@id/selectEgg">
@@ -50,9 +49,9 @@
                 android:id="@+id/spikeySelect"
                 android:layout_width="100dp"
                 android:layout_height="130dp"
+                android:layout_marginRight="-210dp"
                 android:background="#00ff0000"
                 android:scaleType="fitXY"
-                android:layout_marginRight="-210dp"
                 android:src="@drawable/egg_btn" />
 
             <ImageButton

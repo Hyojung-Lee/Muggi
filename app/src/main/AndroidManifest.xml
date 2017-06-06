@@ -32,6 +32,8 @@
 
         <activity android:name=".EggSelected">
         </activity>>
+        <activity android:name=".EggPlay">
+        </activity>>
 
         <activity android:name=".SpikeySelected">
         </activity>>

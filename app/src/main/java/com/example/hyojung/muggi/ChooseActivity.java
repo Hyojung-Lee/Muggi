@@ -23,10 +23,17 @@ public class ChooseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
         Animation set_Anim = AnimationUtils.loadAnimation(this, R.anim.set);
         Animation transAnim = AnimationUtils.loadAnimation(this, R.anim.translate);
-        Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.delayed_alpha);
+        Animation slide = AnimationUtils.loadAnimation(this, R.anim.slide);
 
         ImageView image=(ImageView) findViewById(R.id.text);
         image.startAnimation(set_Anim);
+
+        ImageView qbg=(ImageView) findViewById(R.id.qbg);
+        qbg.startAnimation(slide);
+
+        ImageView text=(ImageView) findViewById(R.id.choosetext);
+        text.startAnimation(alphaAnim);
 
         ImageButton spikey = (ImageButton)findViewById(R.id.spikeySelect);
 

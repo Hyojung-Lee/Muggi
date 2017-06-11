@@ -17,7 +17,8 @@ public class EggPlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eggplay);
         Animation floatingAnim = AnimationUtils.loadAnimation(this, R.anim.floating);
-        Animation loop_scaleAnim = AnimationUtils.loadAnimation(this, R.anim.loop_scale);
+        Animation disappear = AnimationUtils.loadAnimation(this, R.anim.alpha_disappear);
+        Animation delayed_alphaAnim = AnimationUtils.loadAnimation(this, R.anim.delayed_alpha);
         Animation loop_alphaAnim = AnimationUtils.loadAnimation(this, R.anim.loop_alpha);
         ImageView egg = (ImageView)findViewById(R.id.egg);
         egg.startAnimation(floatingAnim);
@@ -26,10 +27,15 @@ public class EggPlay extends AppCompatActivity {
         shadow.startAnimation(loop_alphaAnim);
 
         ImageButton start = (ImageButton)findViewById(R.id.hug);
+        start.startAnimation(delayed_alphaAnim);
         start.setOnClickListener(new ImageButton.OnClickListener() {
             public void onClick(View v) {
             }
         });
+
+        ImageView eggtext = (ImageView)findViewById(R.id.eggtext);
+        eggtext.startAnimation(disappear);
+        eggtext.setVisibility(View.INVISIBLE);
     }
 
 }

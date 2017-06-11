@@ -30,29 +30,16 @@
         android:scaleType="fitXY"
         android:src="@drawable/egg" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/hug"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:scaleType="fitStart"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="30dp"
-            android:background="#00ff0000"
-            android:src="@drawable/hug_btn" />
-        <ImageButton
-            android:id="@+id/music"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:scaleType="fitEnd"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="30dp"
-            android:background="#00ff0000"
-            android:src="@drawable/music_btn" />
-    </RelativeLayout>
+    <ImageButton
+        android:id="@+id/hug"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="450dp"
+        android:scaleType="fitXY"
+        android:background="#00ff0000"
+        android:src="@drawable/hug_btn1" />
+
 </FrameLayout>

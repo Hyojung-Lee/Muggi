@@ -1,6 +1,9 @@
 package com.example.hyojung.muggi;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Animation;
@@ -8,6 +11,7 @@ import android.view.animation.Animation;
 
 public class EggPlay extends AppCompatActivity {
     /** Called when the activity is first created. */
+    Egg egg = new Egg(10);
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,13 @@ public class EggPlay extends AppCompatActivity {
 
         ImageView shadow = (ImageView)findViewById(R.id.shadow);
         shadow.startAnimation(loop_alphaAnim);
+
+        ImageButton start = (ImageButton)findViewById(R.id.hug);
+        start.setOnClickListener(new ImageButton.OnClickListener() {
+            public void onClick(View v) {
+            }
+        });
     }
+
 }
 

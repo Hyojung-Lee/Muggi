@@ -10,7 +10,6 @@
         android:toYDelta="0%"
         android:duration="50000"
         android:zAdjustment="top"
-        android:interpolator="@android:anim/linear_interpolator"
         android:repeatCount="infinite"
         android:repeatMode="restart"/>
 

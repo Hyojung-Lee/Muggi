@@ -12,6 +12,10 @@ import android.view.animation.Animation;
 import android.widget.TextView;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Looper;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 
 public class EggPlay extends AppCompatActivity {
@@ -19,15 +23,56 @@ public class EggPlay extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         class Egg{
-            int warmth=10;
+            int click=0;
+            int warmth=100;
             int age=0;
+            int times=0;
+            int next=0;
             int getWarmth(){return warmth;}
             void setWarmth(int warmth){this.warmth=warmth;}
             int getAge(){return age;}
             void setAge(int age){this.age=age;}
+
             Egg(int warmth, int age){
                 this.warmth=warmth;
                 this.age=age;
+
+            }
+            Timer timer = new Timer();
+            TimerTask warmthTask = new TimerTask(){
+                public void run(){
+                    warmth = warmth-1;
+                }
+            };
+            TimerTask ageTask = new TimerTask() {
+                public void run() {
+                    age = age+1;
+                }
+            };
+
+            Handler mHandler = new Handler(){
+                public void handleMessage(Message msg){
+                    times++;
+                    TextView warmth_val = (TextView)findViewById(R.id.warmth_value);
+                    warmth_val.setText(String.valueOf(warmth));
+                    mHandler.sendEmptyMessageDelayed(0, 100);       // 타이머에따라 위의 과정을 반복함  cf) 1000=1초
+                }
+            };
+            public int getNext(int next){
+                if(warmth<=350 && warmth>=250){this.next=1;}
+                else
+                    return 0;
+                }
+
+            public void start(){
+                if(click==0) {
+                    timer.scheduleAtFixedRate(warmthTask, 5, 5);
+                    timer.scheduleAtFixedRate(ageTask, 200000, 200000);
+                    mHandler.sendEmptyMessage(0);
+                    click++;
+                }
+                else
+                    return;
             }
         }
         super.onCreate(savedInstanceState);
@@ -43,28 +88,22 @@ public class EggPlay extends AppCompatActivity {
 
         ImageButton start = (ImageButton)findViewById(R.id.hug);
         start.startAnimation(delayed_alphaAnim);
-        start.setOnClickListener(new ImageButton.OnClickListener() {
-            Egg egg1 = new Egg(10,0);
 
-            Handler mHandler = new Handler() {
-                public void handleMessage(Message msg) {
-                    egg1.setWarmth(egg1.getWarmth()-1);
-                    mHandler.sendEmptyMessageDelayed(0,1000);
-                }
-            };
-            TextView warmth_val = (TextView)findViewById(R.id.warmth_value);
+        start.setOnClickListener(new ImageButton.OnClickListener() {
+
+            Egg egg1 = new Egg(100,0);
 
             public void onClick(View v) {
+                egg1.start();
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(100);
-                egg1.setWarmth(egg1.getWarmth()+1);
-                warmth_val.setText(""+egg1.getWarmth());
+                vibrator.vibrate(50);
+                egg1.setWarmth(egg1.getWarmth()+50);
             }
-
         });
+
         ImageView eggtext = (ImageView)findViewById(R.id.eggtext);
         eggtext.startAnimation(disappear);
         eggtext.setVisibility(View.INVISIBLE);
     }
-}
 
+}

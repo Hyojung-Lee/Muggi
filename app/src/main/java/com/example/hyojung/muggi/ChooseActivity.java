@@ -48,19 +48,19 @@ public class ChooseActivity extends AppCompatActivity {
         spikey.setOnClickListener(new ImageButton.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(ChooseActivity.this, EggSelected.class); // 두번째 액티비티를 실행하기 위한 인텐트
-                startActivity(intent); // 두번째 액티비티를 실행합니다.
+                startActivity(intent); // 두번째 액티비티 실행
             }
         });
         baldy.setOnClickListener(new ImageButton.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(ChooseActivity.this, EggSelected.class); // 두번째 액티비티를 실행하기 위한 인텐트
-                startActivity(intent); // 두번째 액티비티를 실행합니다.
+                startActivity(intent); // 두번째 액티비티 실행
             }
         });
         buggy.setOnClickListener(new ImageButton.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(ChooseActivity.this, EggSelected.class); // 두번째 액티비티를 실행하기 위한 인텐트
-                startActivity(intent); // 두번째 액티비티를 실행합니다.
+                startActivity(intent); // 두번째 액티비티 실행
             }
         });
     }

@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/lin_lay"
-    android:layout_width="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="#ffffff"
-    android:gravity="center"
-    android:weightSum="1">
+    android:layout_width="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/lin_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:weightSum="1">
 
 
+        <ImageView
+            android:id="@+id/splash"
+            android:layout_width="158dp"
+            android:layout_height="90dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/muggy"
+            android:cropToPadding="false"
+            android:scaleType="fitXY" />
+
+
+    </LinearLayout>
     <ImageView
-        android:id="@+id/splash"
-        android:layout_width="158dp"
-        android:layout_height="90dp"
-        android:adjustViewBounds="false"
-        android:background="@drawable/muggy"
-        android:cropToPadding="false"
-        android:scaleType="fitXY" />
-
-</LinearLayout>
+    android:id="@+id/kau"
+    android:layout_width="100dp"
+    android:layout_height="25dp"
+    android:adjustViewBounds="true"
+    android:layout_gravity="bottom"
+        android:layout_marginLeft="140dp"
+        android:layout_marginBottom="10dp"
+    android:src="@drawable/kau"
+    />
+</FrameLayout>

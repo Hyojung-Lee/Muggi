@@ -27,7 +27,7 @@ public class EggPlay extends AppCompatActivity {
             int warmth=100;
             int age=0;
             int times=0;
-            int next=0;
+            int count=0;
             int getWarmth(){return warmth;}
             void setWarmth(int warmth){this.warmth=warmth;}
             int getAge(){return age;}
@@ -55,19 +55,32 @@ public class EggPlay extends AppCompatActivity {
                     times++;
                     TextView warmth_val = (TextView)findViewById(R.id.warmth_value);
                     warmth_val.setText(String.valueOf(warmth));
-                    mHandler.sendEmptyMessageDelayed(0, 100);       // 타이머에따라 위의 과정을 반복함  cf) 1000=1초
+                    TextView age_val = (TextView)findViewById(R.id.age_val);
+                    age_val.setText(String.valueOf(age)+"살");
+                    if(warmth>=350 || warmth<=250)
+                        count++;
+                    mHandler.sendEmptyMessageDelayed(0, 100);       // 타이머에따라 위의 과정을 반복함
                 }
             };
-            public int getNext(int next){
-                if(warmth<=350 && warmth>=250){this.next=1;}
+
+            public int abortion(){
+                if(warmth<=0 || warmth>=600)
+                    return 1;
                 else
                     return 0;
-                }
+            }
+
+            public int next(){
+                if(count>=100)
+                    return 1;
+                else
+                    return 0;
+            }
 
             public void start(){
                 if(click==0) {
                     timer.scheduleAtFixedRate(warmthTask, 5, 5);
-                    timer.scheduleAtFixedRate(ageTask, 200000, 200000);
+                    timer.scheduleAtFixedRate(ageTask, 5000, 5000);
                     mHandler.sendEmptyMessage(0);
                     click++;
                 }
@@ -95,6 +108,19 @@ public class EggPlay extends AppCompatActivity {
 
             public void onClick(View v) {
                 egg1.start();
+                if(egg1.getAge()>=10){
+                    Intent intent = new Intent(EggPlay.this, EggHatch.class); // 두번째 액티비티를 실행하기 위한 인텐트
+                    startActivity(intent);
+                }
+                if(egg1.next()==1){
+                    Intent intent = new Intent(EggPlay.this, EggAbortion.class); // 두번째 액티비티를 실행하기 위한 인텐트
+                    startActivity(intent);
+                }
+                if(egg1.abortion()==1){
+                    Intent intent = new Intent(EggPlay.this, EggAbortion.class); // 두번째 액티비티를 실행하기 위한 인텐트
+                    startActivity(intent);
+                }
+
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(50);
                 egg1.setWarmth(egg1.getWarmth()+50);

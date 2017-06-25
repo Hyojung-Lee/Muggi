@@ -42,6 +42,14 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
         </activity>>
+        <activity android:name=".EggHatch">
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+        </activity>>
+        <activity android:name=".EggAbortion">
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+        </activity>>
 
         <activity android:name=".SpikeySelected">
             android:configChanges="orientation"

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:rotation="180"
+        android:src="@drawable/bg2"/>
+
+    <ImageView
+        android:id="@+id/dark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/dark"/>
+
+
+    <ImageView
+        android:id="@+id/egg"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/egg" />
+    <ImageView
+        android:id="@+id/fail"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="80dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/fail" />
+    <ImageView
+        android:id="@+id/text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/abortion_text" />
+
+    <ImageButton
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="310dp"
+        android:scaleType="fitXY"
+        android:background="#00ff0000"
+        android:src="@drawable/restart_btn" />
+
+</FrameLayout>

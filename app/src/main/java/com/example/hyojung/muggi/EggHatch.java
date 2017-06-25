@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Animation;
+import android.view.View;
 
 
 
@@ -15,13 +16,22 @@ public class EggHatch extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_egghatch);
-        Animation floatingAnim = AnimationUtils.loadAnimation(this, R.anim.floating);
+        Animation rotatingAnim = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        Animation sup = AnimationUtils.loadAnimation(this, R.anim.suprise_alpha);
+        Animation dis = AnimationUtils.loadAnimation(this, R.anim.suprise_dis);
         Animation loop_alphaAnim = AnimationUtils.loadAnimation(this, R.anim.loop_alpha);
         ImageView egg = (ImageView)findViewById(R.id.egg);
-        egg.startAnimation(floatingAnim);
-        ImageView shadow = (ImageView)findViewById(R.id.shadow);
-        shadow.startAnimation(loop_alphaAnim);
+        ImageView bg = (ImageView)findViewById(R.id.bg);
+        egg.startAnimation(rotatingAnim);
+        ImageView con = (ImageView)findViewById(R.id.confetti);
+        ImageView born = (ImageView)findViewById(R.id.born);
+        con.startAnimation(sup);
+        born.startAnimation(sup);
+        bg.startAnimation(dis);
 
+
+        egg.setVisibility(View.INVISIBLE);
+        bg.setVisibility(View.INVISIBLE);
     }
 
 }

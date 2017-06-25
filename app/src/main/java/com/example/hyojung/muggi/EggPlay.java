@@ -56,7 +56,7 @@ public class EggPlay extends AppCompatActivity {
                     TextView warmth_val = (TextView)findViewById(R.id.warmth_value);
                     warmth_val.setText(String.valueOf(warmth));
                     TextView age_val = (TextView)findViewById(R.id.age_val);
-                    age_val.setText(String.valueOf(age)+"살");
+                    age_val.setText(String.valueOf((10-age)));
                     if(warmth>=350 || warmth<=250)
                         count++;
                     mHandler.sendEmptyMessageDelayed(0, 100);       // 타이머에따라 위의 과정을 반복함

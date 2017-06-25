@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
@@ -12,14 +13,13 @@
         android:src="@drawable/bg2"/>
 
     <ImageView
-        android:id="@+id/shadow"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/confetti"
+        android:layout_width="410dp"
+        android:layout_height="800dp"
         android:adjustViewBounds="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:rotation="180"
         android:scaleType="fitXY"
-        android:src="@drawable/shadow_egg" />
+        android:src="@drawable/confetti" />
 
     <ImageView
         android:id="@+id/egg"
@@ -30,6 +30,18 @@
         android:layout_gravity="center"
         android:scaleType="fitXY"
         android:src="@drawable/egg" />
+
+    <ImageView
+        android:id="@+id/born"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/born" />
+
+
 
 
 </FrameLayout>
